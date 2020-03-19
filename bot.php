@@ -7,11 +7,11 @@
 	file_put_contents('log.txt', file_get_contents('php://input') . PHP_EOL, FILE_APPEND);
 
 	$replyToken = $deCode['events'][0]['replyToken'];
-
-	$messages = ["ถามหน่อย"];
-	$messages['replyToken'] = $replyToken;
-	$messages['messages'][0] = getFormatTextMessage("เอ้ย ถามอะไรก็ตอบได้");
-	$messages['messages'][1] = getFormatTextMessage("เอ้ย ถามอะไรก็ตอบได้");
+	if($messages == "ถามหน่อย"){
+		$messages['replyToken'] = $replyToken;
+		$messages['messages'][0] = getFormatTextMessage("เอ้ย ถามอะไรก็ตอบได้");
+	}
+	
 
 
 	$encodeJson = json_encode($messages);
