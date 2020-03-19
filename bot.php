@@ -1,25 +1,5 @@
 <?php 
 
-use LINE\LINEBot;
-use LINE\LINEBot\HTTPClient\CurlHTTPClient;
-use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
-use LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder;
-use LINE\LINEBot\QuickReplyBuilder\QuickReplyMessageBuilder;
-use LINE\LINEBot\QuickReplyBuilder\ButtonBuilder\QuickReplyButtonBuilder;
-use LINE\LINEBot\TemplateActionBuilder\CameraRollTemplateActionBuilder;
-use LINE\LINEBot\TemplateActionBuilder\CameraTemplateActionBuilder;
-use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
-use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
-use LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder;
-use LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder;
-use LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder;
-use LINE\LINEBot\ImagemapActionBuilder\AreaBuilder;
-use LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder;
-
 	/*Get Data From POST Http Request*/
 	$datas = file_get_contents('php://input');
 	/*Decode Json From LINE Data Body*/
@@ -93,50 +73,50 @@ use LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder;
 		return $datasReturn;
 	}
 
-	private void handleTextContent(String replyToken, Event event, TextMessageContent content) {
-        String text = content.getText();
-        .....
+	// private void handleTextContent(String replyToken, Event event, TextMessageContent content) {
+    //     String text = content.getText();
+    //     .....
 
-        log.info("Got text message from %s : %s", replyToken, text);
+    //     log.info("Got text message from %s : %s", replyToken, text);
 
-        switch (text) {
-            .....
-            case "Flex Back": {
-                String userId = event.getSource().getUserId();
-                if(userId != null) {
-                    lineMessagingClient.linkRichMenuIdToUser(userId, homeMenu);
-                    return;
-                }
-                break;
-            }
-            case "Flex Restaurant": {
-                this.reply(replyToken, new RestaurantFlexMessageSupplier().get());
-                break;
-            }
-            case "Flex Menu": {
-                this.reply(replyToken, new RestaurantMenuFlexMessageSupplier().get());
-                break;
-            }
-            case "Flex Receipt": {
-                this.reply(replyToken, new ReceiptFlexMessageSupplier().get());
-                break;
-            }
-            case "Flex News": {
-                this.reply(replyToken, new NewsFlexMessageSupplier().get());
-                break;
-            }
-            case "Flex Ticket": {
-                this.reply(replyToken, new TicketFlexMessageSupplier().get());
-                break;
-            }
-            case "Flex Catalogue": {
-                this.reply(replyToken, new CatalogueFlexMessageSupplier().get());
-                break;
-            }
-            default:
-                log.info("Return echo message %s : %s", replyToken, text);
-                this.replyText(replyToken, text);
-        }
-    }
+    //     switch (text) {
+    //         .....
+    //         case "Flex Back": {
+    //             String userId = event.getSource().getUserId();
+    //             if(userId != null) {
+    //                 lineMessagingClient.linkRichMenuIdToUser(userId, homeMenu);
+    //                 return;
+    //             }
+    //             break;
+    //         }
+    //         case "Flex Restaurant": {
+    //             this.reply(replyToken, new RestaurantFlexMessageSupplier().get());
+    //             break;
+    //         }
+    //         case "Flex Menu": {
+    //             this.reply(replyToken, new RestaurantMenuFlexMessageSupplier().get());
+    //             break;
+    //         }
+    //         case "Flex Receipt": {
+    //             this.reply(replyToken, new ReceiptFlexMessageSupplier().get());
+    //             break;
+    //         }
+    //         case "Flex News": {
+    //             this.reply(replyToken, new NewsFlexMessageSupplier().get());
+    //             break;
+    //         }
+    //         case "Flex Ticket": {
+    //             this.reply(replyToken, new TicketFlexMessageSupplier().get());
+    //             break;
+    //         }
+    //         case "Flex Catalogue": {
+    //             this.reply(replyToken, new CatalogueFlexMessageSupplier().get());
+    //             break;
+    //         }
+    //         default:
+    //             log.info("Return echo message %s : %s", replyToken, text);
+    //             this.replyText(replyToken, text);
+    //     }
+    // }
 ?>
 
