@@ -8,7 +8,7 @@
 
 	$replyToken = $deCode['events'][0]['replyToken'];
 
-	$messages = "ถามหน่อย";
+	$messages = [];
 	$messages['replyToken'] = $replyToken;
 	$messages['messages'][0] = getFormatTextMessage("เอ้ย ถามอะไรก็ตอบได้");
 
