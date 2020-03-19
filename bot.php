@@ -11,7 +11,29 @@
 
 	$messages = ["ถามหน่อย"];
 	$messages['replyToken'] = $replyToken;
-	$messages['messages'][0] = getFormatTextMessage("เอ้ย ถามอะไรก็ตอบได้");
+	$messages['messages'][0] = getFormatTextMessage(
+		{  
+			"type": "flex",
+			"altText": "this is a flex message",
+			"contents": {
+			  "type": "bubble",
+			  "body": {
+				"type": "box",
+				"layout": "vertical",
+				"contents": [
+				  {
+					"type": "text",
+					"text": "hello"
+				  },
+				  {
+					"type": "text",
+					"text": "world"
+				  }
+				]
+			  }
+			}
+		  }
+	);
 
 	$encodeJson = json_encode($messages);
 
